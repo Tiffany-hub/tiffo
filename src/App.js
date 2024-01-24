@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
 
-function App() {
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './pages/Home';
+import SignInForm from './components/Login';
+import SignUpForm from './components/Signup';
+import GirlbandsPage from './pages/Girlbands';
+import BlackpinkPage from './pages/Blackpink';
+import BoybandsPage from './pages/Boybands';
+import SeventeenPage from './pages/Seventeen';
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<SignInForm />} />
+      <Route path="/signup" element={<SignUpForm />} />
+      <Route path="/girlbands" element={<GirlbandsPage />} />
+      <Route path = "/blackpink" element = {<BlackpinkPage/>} />
+      <Route path = "/boybands" element={<BoybandsPage/>} />
+      <Route path = "/seventeen" element = {<SeventeenPage/>} />
+    </Routes>
   );
-}
+};
 
 export default App;
